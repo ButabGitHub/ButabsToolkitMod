@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://cca402epb73k7"]
+
+[ext_resource type="Texture2D" uid="uid://blvkt2uubcqf5" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="1_7m7we"]
+[ext_resource type="Script" uid="uid://cr1qhvqr88hpy" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/OtherCornerButton.gd" id="2_fwmbj"]
+[ext_resource type="Theme" uid="uid://beuomq0jraf8m" path="res://addons/BopimoTheme/Resources/BopimoTheme.tres" id="3_fwmbj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2shcu"]
+atlas = ExtResource("1_7m7we")
+region = Rect2(194.702, 72.1489, 58.5656, 52.026)
+margin = Rect2(6, 6, 12, 12)
+
+[sub_resource type="GDScript" id="GDScript_rvhoq"]
+script/source = "extends OtherCornerButton
+
+
+func _on_toggled(button_pressed : bool) -> void:
+	if button_pressed == true:
+		$\"ToolkitPanel\".show()
+		self_modulate = Color(1,1,1,1)
+	else:
+		$\"ToolkitPanel\".hide()
+		self_modulate = Color(1,1,1,NORMAL_OPACITY)
+"
+
+[sub_resource type="GDScript" id="GDScript_2shcu"]
+resource_name = "ThemeButton"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_4jphy"]
+resource_name = "ThemeButton2"
+script/source = "extends Button
+"
+
+[sub_resource type="GDScript" id="GDScript_4edw8"]
+resource_name = "ThemeButton3"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	pass
+"
+
+[node name="Toolkit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Toolkit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.697917
+anchor_top = 0.891975
+anchor_right = 0.758681
+anchor_bottom = 0.990741
+tooltip_text = "Butab's Toolkit"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_2shcu")
+script = SubResource("GDScript_rvhoq")
+metadata/_custom_type_script = ExtResource("2_fwmbj")
+metadata/_edit_use_anchors_ = true
+
+[node name="ToolkitPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.635851
+anchor_top = 0.902778
+anchor_right = 0.635851
+anchor_bottom = 0.902778
+offset_left = -70.5
+offset_top = -207.0
+offset_right = 70.5
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="VBoxContainer" parent="ToolkitPanel"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 136.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ThemeButtons" type="VBoxContainer" parent="ToolkitPanel/Container"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ThemeButton" type="Button" parent="ToolkitPanel/Container/ThemeButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_fwmbj")
+text = "Default Theme"
+script = SubResource("GDScript_2shcu")
+
+[node name="ThemeButton2" type="Button" parent="ToolkitPanel/Container/ThemeButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_fwmbj")
+theme_type_variation = &"Button_Red"
+text = "Jolly Theme!"
+script = SubResource("GDScript_4jphy")
+
+[node name="ThemeButton3" type="Button" parent="ToolkitPanel/Container/ThemeButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_fwmbj")
+theme_type_variation = &"Button_Green"
+text = "Butab's Toolkit"
+script = SubResource("GDScript_4edw8")
+
+[node name="Separator" type="HSeparator" parent="ToolkitPanel/Container"]
+layout_mode = 2
+
+[node name="ToolkitButtons" type="VBoxContainer" parent="ToolkitPanel/Container"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ToolkitButton" type="Button" parent="ToolkitPanel/Container/ToolkitButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_fwmbj")
+theme_type_variation = &"Button_Magic_Purple"
+text = "Toolkit Button"
+
+[node name="ToolkitButton2" type="Button" parent="ToolkitPanel/Container/ToolkitButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_fwmbj")
+theme_type_variation = &"Button_Magic_Purple"
+text = "Toolkit Button"
+
+[connection signal="toggled" from="Toolkit" to="Toolkit" method="_on_toggled"]
+[connection signal="pressed" from="ToolkitPanel/Container/ThemeButtons/ThemeButton" to="ToolkitPanel/Container/ThemeButtons/ThemeButton" method="_on_pressed"]
+[connection signal="pressed" from="ToolkitPanel/Container/ThemeButtons/ThemeButton3" to="ToolkitPanel/Container/ThemeButtons/ThemeButton3" method="_on_pressed"]

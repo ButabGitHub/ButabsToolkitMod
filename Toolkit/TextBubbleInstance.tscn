@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://bybdsdqip3ym"]
+
+[ext_resource type="Script" uid="uid://dlr0gijb8vue7" path="res://Client/Scripts/GUI/Text/TextBubble.gd" id="2_4carx"]
+[ext_resource type="Texture2D" uid="uid://b1nx58egvpt4e" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Chat.png" id="2_ete60"]
+[ext_resource type="FontFile" uid="uid://cfgp11vctfx88" path="res://addons/BopimoTheme/Resources/Fonts/Quicksand.ttf" id="2_ylnkm"]
+[ext_resource type="FontVariation" uid="uid://7y0heevchlo1" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Bold.tres" id="4_u7twh"]
+[ext_resource type="FontVariation" uid="uid://bqmsjchh08j4e" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Italics.tres" id="5_10a15"]
+[ext_resource type="FontVariation" uid="uid://c60mjf2s87ncc" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/BoldItalics.tres" id="6_avo1l"]
+[ext_resource type="Shader" uid="uid://c2gvujqcx86gy" path="res://Client/Scenes/GUI/Text/TextBubbleInstance.gdshader" id="7_awa71"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2b68"]
+shader = ExtResource("7_awa71")
+shader_parameter/target_color = Color(0.867825, 0.503159, 0.496109, 1)
+shader_parameter/replace_color = Color(1, 1, 1, 1)
+shader_parameter/tolerance = 0.75
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd3sq"]
+atlas = ExtResource("2_ete60")
+region = Rect2(0, 0, 37, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i735"]
+atlas = ExtResource("2_ete60")
+region = Rect2(0, 42, 41, 22)
+
+[node name="TextBubble" type="HBoxContainer"]
+offset_right = 500.0
+offset_bottom = 40.0
+mouse_filter = 2
+alignment = 1
+script = ExtResource("2_4carx")
+
+[node name="Bubble" type="NinePatchRect" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c2b68")
+layout_mode = 2
+texture = SubResource("AtlasTexture_pd3sq")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Text" type="RichTextLabel" parent="Bubble"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ylnkm")
+theme_override_fonts/italics_font = ExtResource("5_10a15")
+theme_override_fonts/bold_italics_font = ExtResource("6_avo1l")
+theme_override_fonts/bold_font = ExtResource("4_u7twh")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="FadeTime" type="Timer" parent="Bubble"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="BubbleTail" type="TextureRect" parent="Bubble"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_c2b68")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -5.0
+offset_right = 21.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_8i735")
+
+[connection signal="timeout" from="Bubble/FadeTime" to="." method="_on_fade_time_timeout"]

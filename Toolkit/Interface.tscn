@@ -1,0 +1,1098 @@
+[gd_scene load_steps=52 format=3 uid="uid://d2ujw1gpv7jcm"]
+
+[ext_resource type="Theme" uid="uid://beuomq0jraf8m" path="res://addons/BopimoTheme/Resources/BopimoTheme.tres" id="1_u4gp7"]
+[ext_resource type="Script" uid="uid://dllf7oj81r5vh" path="res://Client/Scripts/GUI/Interface.gd" id="2_2h1wi"]
+[ext_resource type="PackedScene" uid="uid://jtxbxl85usu3" path="res://Client/Scenes/GUI/Interface/Chat.tscn" id="2_xjsuh"]
+[ext_resource type="Script" uid="uid://bfa36xwfd3pt2" path="res://Client/Scripts/GUI/DetectMouseOverUi.gd" id="3_8g3eu"]
+[ext_resource type="Texture2D" uid="uid://blvkt2uubcqf5" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="5_3yvk2"]
+[ext_resource type="Script" uid="uid://bfmm3ftwviocg" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/BopiTools.gd" id="5_kt453"]
+[ext_resource type="Script" uid="uid://cwgudg6s41tim" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/LevelSettings.gd" id="7_3a8g1"]
+[ext_resource type="Script" uid="uid://cygt65y5p0ow3" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/Build.gd" id="8_t7p1c"]
+[ext_resource type="PackedScene" uid="uid://c368jxurpt3q5" path="res://Client/Scenes/GUI/Interface/BlockPanel/BlockPanel.tscn" id="9_2nmkh"]
+[ext_resource type="Script" uid="uid://dx8xssts6lf20" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/Settings.gd" id="10_07kmr"]
+[ext_resource type="PackedScene" uid="uid://m3nsigds76w8" path="res://Client/Scenes/Settings/SettingsInterface.tscn" id="12_iaxry"]
+[ext_resource type="PackedScene" uid="uid://dsp3nba76hekv" path="res://Client/Scenes/GUI/Interface/BopiInfo.tscn" id="13_k5crq"]
+[ext_resource type="Script" uid="uid://cr1qhvqr88hpy" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/OtherCornerButton.gd" id="14_g58vg"]
+[ext_resource type="PackedScene" uid="uid://dcwum5ov6gk02" path="res://Client/Scenes/GUI/Interface/LevelSettings/LevelSettings.tscn" id="14_roas6"]
+[ext_resource type="Script" uid="uid://dvxw01q2v7eak" path="res://Client/Scripts/GUI/PlayerList.gd" id="15_04faw"]
+[ext_resource type="PackedScene" uid="uid://bngyj05e8v4dq" path="res://Client/Scenes/GUI/Interface/InventoryHotbar.tscn" id="16_52tvq"]
+[ext_resource type="Script" uid="uid://b1hoshun0rmkf" path="res://Client/Scripts/GUI/BuildMode.gd" id="18_62x2c"]
+[ext_resource type="Texture2D" uid="uid://csubpd0currj3" path="res://Client/Assets/Textures/GUI/Icons/delete70x.png" id="19_8i333"]
+[ext_resource type="PackedScene" uid="uid://v1hmmv2es52m" path="res://Client/Scenes/GUI/Interface/PlayerList/PlayerlistPlayer.tscn" id="19_ahaqf"]
+[ext_resource type="Texture2D" uid="uid://j3qdkya3l3bn" path="res://Client/Assets/Textures/GUI/Icons/properties70x.png" id="19_m66q6"]
+[ext_resource type="Texture2D" uid="uid://crkl2507iisx2" path="res://Client/Assets/Textures/GUI/Icons/paint70x.png" id="20_6dija"]
+[ext_resource type="Theme" uid="uid://dusfwxq4ru6hk" path="res://Shared/Resources/Built-In/Themes/BopimoThemeDark.tres" id="23_ug2hl"]
+[ext_resource type="Texture2D" uid="uid://bckfxe80xihbf" path="res://Client/Assets/Textures/GUI/Icons/RevealBlocks.png" id="28_s218f"]
+[ext_resource type="PackedScene" uid="uid://gbsdnnkriuf4" path="res://Client/Scenes/PropertyPicker/Color/PropertyPickerColor.tscn" id="30_ekgis"]
+[ext_resource type="Shader" uid="uid://bwrxtbfxt4427" path="res://addons/BopimoTheme/Resources/Shader/PatternStatic.gdshader" id="30_ygifm"]
+[ext_resource type="PackedScene" uid="uid://dawkbylva8lne" path="res://Client/Scenes/PropertyPicker/PropertyPattern.tscn" id="31_h6084"]
+[ext_resource type="StyleBox" uid="uid://tqxwqgupm2d0" path="res://Client/Resources/Built-In/Stylebox/EmptyStylebox.stylebox" id="32_7hpxo"]
+[ext_resource type="Texture2D" uid="uid://wlshcbkfdyjk" path="res://Client/Assets/Textures/Blocks/Patterns/Checkerboard.png" id="33_4sdbo"]
+[ext_resource type="Texture2D" uid="uid://bibbaa84otgjg" path="res://Client/Assets/Textures/GUI/X.png" id="33_ddx17"]
+[ext_resource type="Texture2D" uid="uid://drr1pitkx5s04" path="res://Client/Assets/Textures/GUI/Crosshair.png" id="35_r6xgd"]
+
+[sub_resource type="GDScript" id="GDScript_jfprf"]
+script/source = "extends RichTextLabel
+
+func _ready() -> void:
+	Bopimo.client.awaiting_completion_changed.connect(set_visible)
+"
+
+[sub_resource type="GDScript" id="GDScript_5b7e8"]
+script/source = "extends Label
+
+func _ready():
+	Bopimo.client.ui.force_uncaptured_mouse_changed.connect(set_visible)
+"
+
+[sub_resource type="Gradient" id="Gradient_u4pto"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.898039)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3rwr4"]
+gradient = SubResource("Gradient_u4pto")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dufr7"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(66, 4, 61, 57)
+margin = Rect2(2, 4, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3735e"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(139, 9, 43, 46)
+margin = Rect2(11, 9, 21, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrnp8"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(194.702, 72.1489, 58.5656, 52.026)
+margin = Rect2(6, 6, 12, 12)
+
+[sub_resource type="GDScript" id="GDScript_wrnp8"]
+script/source = "extends OtherCornerButton
+
+
+func _on_toggled(button_pressed : bool) -> void:
+	if button_pressed == true:
+		$\"../../ToolkitPanel\".show()
+		self_modulate = Color(1,1,1,1)
+	else:
+		$\"../../ToolkitPanel\".hide()
+		self_modulate = Color(1,1,1,NORMAL_OPACITY)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcm2o"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(198, 6, 52, 52)
+margin = Rect2(6, 6, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kepa6"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(5, 5, 54, 54)
+margin = Rect2(5, 5, 10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln4g1"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 5.0
+bg_color = Color(0.92549, 0, 0.0862745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.65098, 0.054902, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asxvc"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.533333, 0, 0.0313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.282353, 0.00784314, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y20xp"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 5.0
+bg_color = Color(0.807843, 0, 0.0705882, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 5
+border_color = Color(0.517647, 0.0352941, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="GDScript" id="GDScript_72acx"]
+resource_name = "ThemeButton"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	#sAutoload.gumm.replace_resource_at(\"res://addons/BopimoTheme/Resources/BopimoTheme.tres\", sAutoload.gumm.load_resource(\"mod://Themes/BopimoTheme.tres\"))
+	save_to_file(\"BopimoTheme.tres\")
+
+func save_to_file(content : String):
+	var file = FileAccess.open(\"user://mods/ButabsToolkitMod/current_theme.dat\", FileAccess.WRITE)
+	file.store_string(content)
+"
+
+[sub_resource type="GDScript" id="GDScript_pyp2t"]
+resource_name = "ThemeButton2"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	#sAutoload.gumm.replace_resource_at(\"res://addons/BopimoTheme/Resources/BopimoTheme.tres\", sAutoload.gumm.load_resource(\"mod://Themes/JollyTheme.tres\"))
+	save_to_file(\"JollyTheme.tres\")
+
+func save_to_file(content : String):
+	var file = FileAccess.open(\"user://mods/ButabsToolkitMod/current_theme.dat\", FileAccess.WRITE)
+	file.store_string(content)
+"
+
+[sub_resource type="GDScript" id="GDScript_qyy4s"]
+resource_name = "ThemeButton3"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	#sAutoload.gumm.replace_resource_at(\"res://addons/BopimoTheme/Resources/BopimoTheme.tres\", sAutoload.gumm.load_resource(\"mod://Themes/ButabsToolkitTheme.tres\"))
+	save_to_file(\"ButabsToolkitTheme.tres\")
+
+func save_to_file(content : String):
+	var file = FileAccess.open(\"user://mods/ButabsToolkitMod/current_theme.dat\", FileAccess.WRITE)
+	file.store_string(content)
+"
+
+[sub_resource type="GDScript" id="GDScript_dwlf1"]
+script/source = "extends HBoxContainer
+
+func _ready()-> void:
+	await(Bopimo.active_playfield.ready)
+	Bopimo.active_playfield.connect(\"change_apply_buttons_visibility\",(func(vis:bool)->void: self.visible=vis) as Callable)
+
+func _on_apply_pressed() -> void:
+	Bopimo.active_playfield.apply_changes()
+	Bopimo.client.ui.configure_panel.close()
+
+
+func _on_cancel_pressed() -> void:
+	Bopimo.active_playfield.cancel_changes()
+	Bopimo.client.ui.configure_panel.close()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkhhr"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqekx"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_giyi3"]
+resource_local_to_scene = true
+shader = ExtResource("30_ygifm")
+shader_parameter/pattern_index = 0
+shader_parameter/pattern_color = Color(1, 1, 1, 1)
+shader_parameter/base_color = Color(0, 0, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty7so"]
+atlas = ExtResource("5_3yvk2")
+region = Rect2(288, 64, 32, 32)
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u4gp7")
+script = ExtResource("2_2h1wi")
+
+[node name="DetectMouseOverUi" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+script = ExtResource("3_8g3eu")
+
+[node name="Chat" parent="." instance=ExtResource("2_xjsuh")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 443.0
+offset_bottom = 246.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="EffectContainer" type="VBoxContainer" parent="Chat"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -2.0
+offset_bottom = 826.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="LevelClearWarning" type="RichTextLabel" parent="Chat"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_right = 465.0
+grow_horizontal = 0
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][color=purple][font_size=20]A player with level publishing permissions must complete this level before other players can complete it!"
+script = SubResource("GDScript_jfprf")
+
+[node name="Label" type="Label" parent="Chat"]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 5.0
+offset_right = 490.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.939551, 0.74549, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Forcing uncaptured mouse"
+script = SubResource("GDScript_5b7e8")
+
+[node name="Other" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -374.0
+offset_top = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Gradient" type="TextureRect" parent="Other"]
+modulate = Color(0.156863, 0.105882, 0.14902, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_3rwr4")
+expand_mode = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Other"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -70.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="LevelSettings" type="TextureButton" parent="Other/Buttons"]
+layout_mode = 2
+tooltip_text = "Level Settings"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_dufr7")
+script = ExtResource("7_3a8g1")
+
+[node name="Build" type="TextureButton" parent="Other/Buttons"]
+layout_mode = 2
+tooltip_text = "Build Mode"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_3735e")
+script = ExtResource("8_t7p1c")
+
+[node name="Toolkit" type="TextureButton" parent="Other/Buttons"]
+layout_mode = 2
+tooltip_text = "Butab's Toolkit"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_wrnp8")
+script = SubResource("GDScript_wrnp8")
+metadata/_custom_type_script = ExtResource("14_g58vg")
+
+[node name="BopiTools" type="TextureButton" parent="Other/Buttons"]
+layout_mode = 2
+tooltip_text = "Bopi Tools"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_qcm2o")
+script = ExtResource("5_kt453")
+
+[node name="Settings" type="TextureButton" parent="Other/Buttons"]
+layout_mode = 2
+tooltip_text = "Settings"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_kepa6")
+script = ExtResource("10_07kmr")
+
+[node name="BopiToolsPanel" type="Panel" parent="Other"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.501337
+anchor_top = -0.0657895
+anchor_right = 0.501337
+anchor_bottom = -0.0657895
+offset_left = -70.5
+offset_top = -207.0
+offset_right = 70.5
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Other/BopiToolsPanel"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 136.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Ghost" type="Button" parent="Other/BopiToolsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "translation.gui.bopi_tools.ghost.description"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_u4gp7")
+theme_type_variation = &"Button_Ghost"
+toggle_mode = true
+text = "translation.gui.bopi_tools.ghost.name"
+autowrap_mode = 1
+
+[node name="Invincibility" type="Button" parent="Other/BopiToolsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "translation.gui.bopi_tools.invincibility.description"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_u4gp7")
+theme_type_variation = &"Button_Blue"
+toggle_mode = true
+text = "translation.gui.bopi_tools.invincibility.name"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="Noclip" type="Button" parent="Other/BopiToolsPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "translation.gui.bopi_tools.noclip.description"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("1_u4gp7")
+theme_type_variation = &"Button_Yellow"
+toggle_mode = true
+text = "translation.gui.bopi_tools.noclip.name"
+
+[node name="Seperator" type="HSeparator" parent="Other/BopiToolsPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Respawn" type="Button" parent="Other/BopiToolsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "translation.gui.bopi_tools.respawn.description"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "translation.gui.bopi_tools.respawn.name"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="RestartLevel" type="Button" parent="Other/BopiToolsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tooltip_text = "translation.gui.bopi_tools.restart_level.description"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_styles/hover = SubResource("StyleBoxFlat_ln4g1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_asxvc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y20xp")
+text = "translation.gui.bopi_tools.restart_level.name"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="ToolkitPanel" type="Panel" parent="Other"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.124332
+anchor_top = -0.0657895
+anchor_right = 0.124332
+anchor_bottom = -0.0657895
+offset_left = -70.5
+offset_top = -207.0
+offset_right = 70.5
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Container" type="VBoxContainer" parent="Other/ToolkitPanel"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 136.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ThemeButtons" type="VBoxContainer" parent="Other/ToolkitPanel/Container"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ThemeButton" type="Button" parent="Other/ToolkitPanel/Container/ThemeButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_u4gp7")
+text = "Default Theme"
+script = SubResource("GDScript_72acx")
+
+[node name="ThemeButton2" type="Button" parent="Other/ToolkitPanel/Container/ThemeButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_u4gp7")
+theme_type_variation = &"Button_Red"
+text = "Jolly Theme!"
+script = SubResource("GDScript_pyp2t")
+
+[node name="ThemeButton3" type="Button" parent="Other/ToolkitPanel/Container/ThemeButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_u4gp7")
+theme_type_variation = &"Button_Green"
+text = "Butab's Toolkit"
+script = SubResource("GDScript_qyy4s")
+
+[node name="Separator" type="HSeparator" parent="Other/ToolkitPanel/Container"]
+layout_mode = 2
+
+[node name="ToolkitButtons" type="VBoxContainer" parent="Other/ToolkitPanel/Container"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ToolkitButton" type="Button" parent="Other/ToolkitPanel/Container/ToolkitButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_u4gp7")
+theme_type_variation = &"Button_Magic_Purple"
+text = "Toolkit Button"
+
+[node name="ToolkitButton2" type="Button" parent="Other/ToolkitPanel/Container/ToolkitButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("1_u4gp7")
+theme_type_variation = &"Button_Magic_Purple"
+text = "Toolkit Button"
+
+[node name="ThemeChangeText" type="RichTextLabel" parent="Other/ToolkitPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.504
+offset_left = -111.5
+offset_top = -57.0
+offset_right = 111.936
+bbcode_enabled = true
+text = "[outline_size=11][font_size=18][wave amp=45.0 freq=3.5.0 connected=1]To change theme you need to restart client![/wave][/font_size][/outline_size]"
+metadata/_edit_use_anchors_ = true
+
+[node name="ApplyCancelChanges" type="HBoxContainer" parent="Other"]
+visible = false
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -34.0
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = 7
+script = SubResource("GDScript_dwlf1")
+
+[node name="Apply" type="TextureButton" parent="Other/ApplyCancelChanges"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_lkhhr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_g58vg")
+NORMAL_OPACITY = 0.9
+HOVER_OPACITY = 1.0
+
+[node name="Cancel" type="TextureButton" parent="Other/ApplyCancelChanges"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_iqekx")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("14_g58vg")
+NORMAL_OPACITY = 0.9
+HOVER_OPACITY = 1.0
+
+[node name="PlayerList" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = 218.0
+grow_horizontal = 0
+script = ExtResource("15_04faw")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PlayerList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerList/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="PlayerlistPlayer" parent="PlayerList/ScrollContainer/VBoxContainer" instance=ExtResource("19_ahaqf")]
+layout_mode = 2
+local = true
+
+[node name="HSeparator" type="HSeparator" parent="PlayerList/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BottomLeft" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -79.0
+offset_right = 453.0
+offset_bottom = -10.0
+grow_vertical = 0
+
+[node name="BopiInfo" parent="BottomLeft" instance=ExtResource("13_k5crq")]
+layout_mode = 1
+anchors_preset = 12
+anchor_right = 1.0
+offset_top = -166.0
+offset_right = 0.0
+offset_bottom = -85.0
+grow_horizontal = 2
+
+[node name="HotbarContainer" parent="BottomLeft" instance=ExtResource("16_52tvq")]
+layout_mode = 1
+
+[node name="BuildMode" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("18_62x2c")
+
+[node name="Container" type="Control" parent="BuildMode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ConfigButtons" type="HBoxContainer" parent="BuildMode/Container"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -665.0
+offset_top = 13.0
+offset_right = -239.0
+offset_bottom = 53.0
+grow_horizontal = 0
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="Misc" type="HBoxContainer" parent="BuildMode/Container/ConfigButtons"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Reveal" type="Button" parent="BuildMode/Container/ConfigButtons/Misc"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Reveals the location of all blocks, including hidden ones"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"Button_Orange"
+
+[node name="Icon" type="TextureRect" parent="BuildMode/Container/ConfigButtons/Misc/Reveal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("28_s218f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Snapping" type="HBoxContainer" parent="BuildMode/Container/ConfigButtons"]
+layout_mode = 2
+
+[node name="SnapRotate" type="VBoxContainer" parent="BuildMode/Container/ConfigButtons/Snapping"]
+layout_mode = 2
+theme_override_constants/separation = -35
+alignment = 1
+
+[node name="SnapNumber" type="Label" parent="BuildMode/Container/ConfigButtons/Snapping/SnapRotate"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "15"
+horizontal_alignment = 1
+
+[node name="SnapSlider" type="HSlider" parent="BuildMode/Container/ConfigButtons/Snapping/SnapRotate"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"HSlider_Lime"
+min_value = 5.0
+max_value = 90.0
+step = 5.0
+value = 15.0
+tick_count = 9
+ticks_on_borders = true
+
+[node name="SnapLabel" type="Label" parent="BuildMode/Container/ConfigButtons/Snapping/SnapRotate"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "Rotate Snap"
+horizontal_alignment = 1
+
+[node name="SnapMove" type="VBoxContainer" parent="BuildMode/Container/ConfigButtons/Snapping"]
+layout_mode = 2
+theme_override_constants/separation = -35
+alignment = 1
+
+[node name="SnapNumber" type="Label" parent="BuildMode/Container/ConfigButtons/Snapping/SnapMove"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "1"
+horizontal_alignment = 1
+
+[node name="SnapSlider" type="HSlider" parent="BuildMode/Container/ConfigButtons/Snapping/SnapMove"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"HSlider_Blue"
+min_value = 0.25
+max_value = 1.0
+step = 0.25
+value = 1.0
+tick_count = 4
+ticks_on_borders = true
+
+[node name="SnapLabel" type="Label" parent="BuildMode/Container/ConfigButtons/Snapping/SnapMove"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+text = "Move Snap"
+horizontal_alignment = 1
+
+[node name="Deletion" type="HBoxContainer" parent="BuildMode/Container/ConfigButtons"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Delete" type="Button" parent="BuildMode/Container/ConfigButtons/Deletion"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Deletes the selected blocks"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_type_variation = &"Button_Red"
+
+[node name="Icon" type="TextureRect" parent="BuildMode/Container/ConfigButtons/Deletion/Delete"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_8i333")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Configuration" type="HBoxContainer" parent="BuildMode/Container/ConfigButtons"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Configure" type="Button" parent="BuildMode/Container/ConfigButtons/Configuration"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+tooltip_text = "Opens the configurement panel for the selected block"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Icon" type="TextureRect" parent="BuildMode/Container/ConfigButtons/Configuration/Configure"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_m66q6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Painting" type="HBoxContainer" parent="BuildMode/Container/ConfigButtons"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ColorPaint" type="Button" parent="BuildMode/Container/ConfigButtons/Painting"]
+custom_minimum_size = Vector2(78, 40)
+layout_mode = 2
+tooltip_text = "Enables color painting mode"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("23_ug2hl")
+toggle_mode = true
+
+[node name="Icon" type="TextureRect" parent="BuildMode/Container/ConfigButtons/Painting/ColorPaint"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 34.0
+offset_bottom = -2.0
+grow_vertical = 2
+texture = ExtResource("20_6dija")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PropertyPickerColor" parent="BuildMode/Container/ConfigButtons/Painting/ColorPaint" instance=ExtResource("30_ekgis")]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 5.0
+offset_right = 69.0
+offset_bottom = 30.0
+scale = Vector2(1.1, 1.1)
+
+[node name="PatternPaint" type="Button" parent="BuildMode/Container/ConfigButtons/Painting"]
+custom_minimum_size = Vector2(78, 40)
+layout_mode = 2
+tooltip_text = "Enables pattern  painting mode"
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("23_ug2hl")
+toggle_mode = true
+
+[node name="Icon" type="TextureRect" parent="BuildMode/Container/ConfigButtons/Painting/PatternPaint"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = 34.0
+offset_bottom = -2.0
+grow_vertical = 2
+texture = ExtResource("20_6dija")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PropertyPattern" parent="BuildMode/Container/ConfigButtons/Painting/PatternPaint" instance=ExtResource("31_h6084")]
+custom_minimum_size = Vector2(0, 0)
+offset_left = 40.0
+offset_top = 1.0
+offset_right = 96.0
+offset_bottom = 57.0
+scale = Vector2(0.6, 0.6)
+
+[node name="PopoutTexturePicker" parent="BuildMode/Container/ConfigButtons/Painting/PatternPaint/PropertyPattern" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("32_7hpxo")
+
+[node name="Icon" parent="BuildMode/Container/ConfigButtons/Painting/PatternPaint/PropertyPattern/PopoutTexturePicker" index="0"]
+texture = ExtResource("33_4sdbo")
+
+[node name="ColorRect" parent="BuildMode/Container/ConfigButtons/Painting/PatternPaint/PropertyPattern/PopoutTexturePicker/Icon" index="0"]
+material = SubResource("ShaderMaterial_giyi3")
+
+[node name="OpenPanel" parent="BuildMode/Container/ConfigButtons/Painting/PatternPaint/PropertyPattern/PopoutTexturePicker" index="1"]
+offset_left = -60.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+flat = true
+
+[node name="ButtonIcon" parent="BuildMode/Container/ConfigButtons/Painting/PatternPaint/PropertyPattern/PopoutTexturePicker/OpenPanel" index="0"]
+visible = false
+
+[node name="BlockPanel" parent="BuildMode/Container" instance=ExtResource("9_2nmkh")]
+layout_mode = 1
+offset_bottom = -81.0
+
+[node name="BackpackWindow" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.5
+offset_top = -215.0
+offset_right = 372.5
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BackpackWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 28.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackpackGrid" type="GridContainer" parent="BackpackWindow/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 10
+
+[node name="Close" type="TextureButton" parent="BackpackWindow"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 24.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("33_ddx17")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="BackpackWindow"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+text = "Your Backpack!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crosshair" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("35_r6xgd")
+expand_mode = 1
+
+[node name="ShowChat" type="Button" parent="."]
+visible = false
+layout_mode = 1
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 49.0
+offset_bottom = 52.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+icon = SubResource("AtlasTexture_ty7so")
+
+[node name="QuickRestartLevelVisual" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -27.0
+offset_right = 100.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.25, 1.25)
+pivot_offset = Vector2(100, 30)
+
+[node name="Label" type="RichTextLabel" parent="QuickRestartLevelVisual"]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Restart Level[/center]"
+scroll_active = false
+
+[node name="QuickRestartProgressBar" type="ProgressBar" parent="QuickRestartLevelVisual"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+max_value = 0.6
+step = 0.0
+show_percentage = false
+
+[node name="SettingsInterface" parent="." instance=ExtResource("12_iaxry")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="LevelSettings" parent="." instance=ExtResource("14_roas6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[connection signal="mouse_entered" from="DetectMouseOverUi" to="DetectMouseOverUi" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="DetectMouseOverUi" to="DetectMouseOverUi" method="_on_mouse_exited"]
+[connection signal="pressed" from="Other/Buttons/LevelSettings" to="Other/Buttons/LevelSettings" method="_on_pressed"]
+[connection signal="toggled" from="Other/Buttons/Build" to="Other/Buttons/Build" method="_on_toggled"]
+[connection signal="toggled" from="Other/Buttons/Toolkit" to="Other/Buttons/Toolkit" method="_on_toggled"]
+[connection signal="toggled" from="Other/Buttons/BopiTools" to="Other/Buttons/BopiTools" method="_on_toggled"]
+[connection signal="pressed" from="Other/Buttons/Settings" to="Other/Buttons/Settings" method="_on_pressed"]
+[connection signal="toggled" from="Other/BopiToolsPanel/VBoxContainer/Ghost" to="." method="_on_ghost_toggled"]
+[connection signal="toggled" from="Other/BopiToolsPanel/VBoxContainer/Invincibility" to="." method="_on_invincibility_toggled"]
+[connection signal="toggled" from="Other/BopiToolsPanel/VBoxContainer/Noclip" to="." method="_on_noclip_toggled"]
+[connection signal="pressed" from="Other/BopiToolsPanel/VBoxContainer/Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="Other/BopiToolsPanel/VBoxContainer/RestartLevel" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed" from="Other/ToolkitPanel/Container/ThemeButtons/ThemeButton" to="Other/ToolkitPanel/Container/ThemeButtons/ThemeButton" method="_on_pressed"]
+[connection signal="pressed" from="Other/ToolkitPanel/Container/ThemeButtons/ThemeButton2" to="Other/ToolkitPanel/Container/ThemeButtons/ThemeButton2" method="_on_pressed"]
+[connection signal="pressed" from="Other/ToolkitPanel/Container/ThemeButtons/ThemeButton3" to="Other/ToolkitPanel/Container/ThemeButtons/ThemeButton3" method="_on_pressed"]
+[connection signal="pressed" from="Other/ApplyCancelChanges/Apply" to="Other/ApplyCancelChanges" method="_on_apply_pressed"]
+[connection signal="pressed" from="Other/ApplyCancelChanges/Cancel" to="Other/ApplyCancelChanges" method="_on_cancel_pressed"]
+[connection signal="pressed" from="BuildMode/Container/ConfigButtons/Misc/Reveal" to="BuildMode" method="reveal_pressed"]
+[connection signal="value_changed" from="BuildMode/Container/ConfigButtons/Snapping/SnapRotate/SnapSlider" to="BuildMode" method="rotate_snap_changed"]
+[connection signal="value_changed" from="BuildMode/Container/ConfigButtons/Snapping/SnapMove/SnapSlider" to="BuildMode" method="move_snap_changed"]
+[connection signal="pressed" from="BuildMode/Container/ConfigButtons/Deletion/Delete" to="BuildMode" method="delete_pressed"]
+[connection signal="pressed" from="BuildMode/Container/ConfigButtons/Configuration/Configure" to="BuildMode" method="configure_pressed"]
+[connection signal="toggled" from="BuildMode/Container/ConfigButtons/Painting/ColorPaint" to="BuildMode" method="color_paint_toggled"]
+[connection signal="value_set" from="BuildMode/Container/ConfigButtons/Painting/ColorPaint/PropertyPickerColor" to="BuildMode" method="color_paint_color_chosen"]
+[connection signal="toggled" from="BuildMode/Container/ConfigButtons/Painting/PatternPaint" to="BuildMode" method="pattern_paint_toggled"]
+[connection signal="pressed" from="BackpackWindow/Close" to="BottomLeft/HotbarContainer" method="backpack_closed"]
+[connection signal="pressed" from="ShowChat" to="Chat" method="_on_show_chat_pressed"]
+
+[editable path="BuildMode/Container/ConfigButtons/Painting/PatternPaint/PropertyPattern"]
+[editable path="BuildMode/Container/ConfigButtons/Painting/PatternPaint/PropertyPattern/PopoutTexturePicker"]
