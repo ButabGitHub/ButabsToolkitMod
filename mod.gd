@@ -11,7 +11,13 @@ func _initialize(scene_tree: SceneTree) -> void:
 	#replace_resource_at("res://Client/Scripts/GUI/Interface.gd", load_resource("mod://Toolkit/Interface.gd"))
 
 	# lazy theme loading implementation which (hopefully) will be changed in future
-	replace_resource_at("res://addons/BopimoTheme/Resources/BopimoTheme.tres", load_resource(str("mod://Themes/", theme)))
+	#replace_resource_at("res://addons/BopimoTheme/Resources/BopimoTheme.tres", load_resource(str("mod://Themes/", theme)))
+
+
+	var spawner = TreeStalker.new()
+	spawner.gumm = self
+	spawner.theme = load_resource(str("mod://Themes/", theme))
+	scene_tree.root.call_deferred("add_child", spawner)
 
 	print("		!!! Loaded Butab's complete toolkit !!!		")
 
@@ -20,3 +26,15 @@ func load_from_file():
 	var content : String = file.get_as_text()
 	
 	return str(content)
+
+class TreeStalker extends Node:
+	var gumm
+	var theme
+	
+	func _ready():
+		# Notify me on each new node.
+		get_tree().node_added.connect(on_new_node)
+	
+	func on_new_node(node):
+		if "theme" in node:
+			node.theme = theme
