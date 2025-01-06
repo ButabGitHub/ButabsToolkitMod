@@ -16,7 +16,7 @@ func _initialize(scene_tree: SceneTree) -> void:
 	spawner.theme = load_resource(str("mod://Themes/", theme))
 	scene_tree.root.call_deferred("add_child", spawner)
 
-	print("		!!! Loaded Butab's complete toolkit !!!		")
+	print("\t!!! Loaded Butab's complete toolkit !!!\t")
 
 func load_from_file():
 	var file = FileAccess.open("user://mods/ButabsToolkitMod/current_theme.dat", FileAccess.READ)
@@ -41,7 +41,6 @@ class Themer extends Node:
 				node.add_to_group("themed")
 
 	func change_theme(path_to_theme : String):
-		print("THEME CHANGE!")
 		theme = gumm.load_resource(path_to_theme)
 		for node in get_tree().get_nodes_in_group("themed"):
 			node.theme = theme
