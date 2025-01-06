@@ -11,11 +11,12 @@ func _initialize(scene_tree: SceneTree) -> void:
 	#replace_resource_at("res://Client/Scripts/GUI/Interface.gd", load_resource("mod://Toolkit/Interface.gd"))
 
 	var spawner = Themer.new()
+	spawner.name = "Themer"
 	spawner.gumm = self
 	spawner.theme = load_resource(str("mod://Themes/", theme))
 	scene_tree.root.call_deferred("add_child", spawner)
 
-	print("		!!! Loaded Butab's complete toolkit !!!		")
+	print("\t!!! Loaded Butab's complete toolkit !!!\t")
 
 func load_from_file():
 	var file = FileAccess.open("user://mods/ButabsToolkitMod/current_theme.dat", FileAccess.READ)
@@ -23,7 +24,8 @@ func load_from_file():
 	
 	return str(content)
 
-#This class is watching for new noad
+
+#This class is watching for new nodes
 class Themer extends Node:
 	var gumm
 	var theme
