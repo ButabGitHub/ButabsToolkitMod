@@ -562,18 +562,6 @@ theme = ExtResource("1_u4gp7")
 theme_type_variation = &"Button_Magic_Purple"
 text = "Toolkit Button"
 
-[node name="ThemeChangeText" type="RichTextLabel" parent="Other/ToolkitPanel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.504
-offset_left = -111.5
-offset_top = -57.0
-offset_right = 111.936
-bbcode_enabled = true
-text = "[outline_size=11][font_size=18][wave amp=45.0 freq=3.5.0 connected=1]To change theme you need to restart client![/wave][/font_size][/outline_size]"
-metadata/_edit_use_anchors_ = true
-
 [node name="ApplyCancelChanges" type="HBoxContainer" parent="Other"]
 visible = false
 layout_mode = 1
