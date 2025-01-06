@@ -1,35 +1,35 @@
 [gd_scene load_steps=52 format=3 uid="uid://d2ujw1gpv7jcm"]
 
-[ext_resource type="Theme" uid="uid://beuomq0jraf8m" path="res://addons/BopimoTheme/Resources/BopimoTheme.tres" id="1_u4gp7"]
-[ext_resource type="Script" uid="uid://dllf7oj81r5vh" path="res://Client/Scripts/GUI/Interface.gd" id="2_2h1wi"]
-[ext_resource type="PackedScene" uid="uid://jtxbxl85usu3" path="res://Client/Scenes/GUI/Interface/Chat.tscn" id="2_xjsuh"]
-[ext_resource type="Script" uid="uid://bfa36xwfd3pt2" path="res://Client/Scripts/GUI/DetectMouseOverUi.gd" id="3_8g3eu"]
-[ext_resource type="Texture2D" uid="uid://blvkt2uubcqf5" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="5_3yvk2"]
-[ext_resource type="Script" uid="uid://bfmm3ftwviocg" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/BopiTools.gd" id="5_kt453"]
-[ext_resource type="Script" uid="uid://cwgudg6s41tim" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/LevelSettings.gd" id="7_3a8g1"]
-[ext_resource type="Script" uid="uid://cygt65y5p0ow3" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/Build.gd" id="8_t7p1c"]
-[ext_resource type="PackedScene" uid="uid://c368jxurpt3q5" path="res://Client/Scenes/GUI/Interface/BlockPanel/BlockPanel.tscn" id="9_2nmkh"]
-[ext_resource type="Script" uid="uid://dx8xssts6lf20" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/Settings.gd" id="10_07kmr"]
-[ext_resource type="PackedScene" uid="uid://m3nsigds76w8" path="res://Client/Scenes/Settings/SettingsInterface.tscn" id="12_iaxry"]
-[ext_resource type="PackedScene" uid="uid://dsp3nba76hekv" path="res://Client/Scenes/GUI/Interface/BopiInfo.tscn" id="13_k5crq"]
-[ext_resource type="Script" uid="uid://cr1qhvqr88hpy" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/OtherCornerButton.gd" id="14_g58vg"]
-[ext_resource type="PackedScene" uid="uid://dcwum5ov6gk02" path="res://Client/Scenes/GUI/Interface/LevelSettings/LevelSettings.tscn" id="14_roas6"]
-[ext_resource type="Script" uid="uid://dvxw01q2v7eak" path="res://Client/Scripts/GUI/PlayerList.gd" id="15_04faw"]
-[ext_resource type="PackedScene" uid="uid://bngyj05e8v4dq" path="res://Client/Scenes/GUI/Interface/InventoryHotbar.tscn" id="16_52tvq"]
-[ext_resource type="Script" uid="uid://b1hoshun0rmkf" path="res://Client/Scripts/GUI/BuildMode.gd" id="18_62x2c"]
-[ext_resource type="Texture2D" uid="uid://csubpd0currj3" path="res://Client/Assets/Textures/GUI/Icons/delete70x.png" id="19_8i333"]
-[ext_resource type="PackedScene" uid="uid://v1hmmv2es52m" path="res://Client/Scenes/GUI/Interface/PlayerList/PlayerlistPlayer.tscn" id="19_ahaqf"]
-[ext_resource type="Texture2D" uid="uid://j3qdkya3l3bn" path="res://Client/Assets/Textures/GUI/Icons/properties70x.png" id="19_m66q6"]
-[ext_resource type="Texture2D" uid="uid://crkl2507iisx2" path="res://Client/Assets/Textures/GUI/Icons/paint70x.png" id="20_6dija"]
-[ext_resource type="Theme" uid="uid://dusfwxq4ru6hk" path="res://Shared/Resources/Built-In/Themes/BopimoThemeDark.tres" id="23_ug2hl"]
-[ext_resource type="Texture2D" uid="uid://bckfxe80xihbf" path="res://Client/Assets/Textures/GUI/Icons/RevealBlocks.png" id="28_s218f"]
-[ext_resource type="PackedScene" uid="uid://gbsdnnkriuf4" path="res://Client/Scenes/PropertyPicker/Color/PropertyPickerColor.tscn" id="30_ekgis"]
-[ext_resource type="Shader" uid="uid://bwrxtbfxt4427" path="res://addons/BopimoTheme/Resources/Shader/PatternStatic.gdshader" id="30_ygifm"]
-[ext_resource type="PackedScene" uid="uid://dawkbylva8lne" path="res://Client/Scenes/PropertyPicker/PropertyPattern.tscn" id="31_h6084"]
-[ext_resource type="StyleBox" uid="uid://tqxwqgupm2d0" path="res://Client/Resources/Built-In/Stylebox/EmptyStylebox.stylebox" id="32_7hpxo"]
-[ext_resource type="Texture2D" uid="uid://wlshcbkfdyjk" path="res://Client/Assets/Textures/Blocks/Patterns/Checkerboard.png" id="33_4sdbo"]
-[ext_resource type="Texture2D" uid="uid://bibbaa84otgjg" path="res://Client/Assets/Textures/GUI/X.png" id="33_ddx17"]
-[ext_resource type="Texture2D" uid="uid://drr1pitkx5s04" path="res://Client/Assets/Textures/GUI/Crosshair.png" id="35_r6xgd"]
+[ext_resource type="Theme" path="res://addons/BopimoTheme/Resources/BopimoTheme.tres" id="1_u4gp7"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Interface.gd" id="2_2h1wi"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/GUI/Interface/Chat.tscn" id="2_xjsuh"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/DetectMouseOverUi.gd" id="3_8g3eu"]
+[ext_resource type="Texture2D" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="5_3yvk2"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/BopiTools.gd" id="5_kt453"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/LevelSettings.gd" id="7_3a8g1"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/Build.gd" id="8_t7p1c"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/GUI/Interface/BlockPanel/BlockPanel.tscn" id="9_2nmkh"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/Settings.gd" id="10_07kmr"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/Settings/SettingsInterface.tscn" id="12_iaxry"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/GUI/Interface/BopiInfo.tscn" id="13_k5crq"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/OtherCornerButton.gd" id="14_g58vg"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/GUI/Interface/LevelSettings/LevelSettings.tscn" id="14_roas6"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/PlayerList.gd" id="15_04faw"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/GUI/Interface/InventoryHotbar.tscn" id="16_52tvq"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/BuildMode.gd" id="18_62x2c"]
+[ext_resource type="Texture2D" path="res://Client/Assets/Textures/GUI/Icons/delete70x.png" id="19_8i333"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/GUI/Interface/PlayerList/PlayerlistPlayer.tscn" id="19_ahaqf"]
+[ext_resource type="Texture2D" path="res://Client/Assets/Textures/GUI/Icons/properties70x.png" id="19_m66q6"]
+[ext_resource type="Texture2D" path="res://Client/Assets/Textures/GUI/Icons/paint70x.png" id="20_6dija"]
+[ext_resource type="Theme" path="res://Shared/Resources/Built-In/Themes/BopimoThemeDark.tres" id="23_ug2hl"]
+[ext_resource type="Texture2D" path="res://Client/Assets/Textures/GUI/Icons/RevealBlocks.png" id="28_s218f"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/PropertyPicker/Color/PropertyPickerColor.tscn" id="30_ekgis"]
+[ext_resource type="Shader" path="res://addons/BopimoTheme/Resources/Shader/PatternStatic.gdshader" id="30_ygifm"]
+[ext_resource type="PackedScene" path="res://Client/Scenes/PropertyPicker/PropertyPattern.tscn" id="31_h6084"]
+[ext_resource type="StyleBox" path="res://Client/Resources/Built-In/Stylebox/EmptyStylebox.stylebox" id="32_7hpxo"]
+[ext_resource type="Texture2D" path="res://Client/Assets/Textures/Blocks/Patterns/Checkerboard.png" id="33_4sdbo"]
+[ext_resource type="Texture2D" path="res://Client/Assets/Textures/GUI/X.png" id="33_ddx17"]
+[ext_resource type="Texture2D" path="res://Client/Assets/Textures/GUI/Crosshair.png" id="35_r6xgd"]
 
 [sub_resource type="GDScript" id="GDScript_jfprf"]
 script/source = "extends RichTextLabel
@@ -157,8 +157,11 @@ expand_margin_bottom = 3.0
 resource_name = "ThemeButton"
 script/source = "extends Button
 
+signal change_theme
+
 func _on_pressed() -> void:
 	#sAutoload.gumm.replace_resource_at(\"res://addons/BopimoTheme/Resources/BopimoTheme.tres\", sAutoload.gumm.load_resource(\"mod://Themes/BopimoTheme.tres\"))
+	$/root/Themer.change_theme(\"mod://Themes/BopimoTheme.tres\")
 	save_to_file(\"BopimoTheme.tres\")
 
 func save_to_file(content : String):
@@ -170,8 +173,11 @@ func save_to_file(content : String):
 resource_name = "ThemeButton2"
 script/source = "extends Button
 
+signal change_theme
+
 func _on_pressed() -> void:
 	#sAutoload.gumm.replace_resource_at(\"res://addons/BopimoTheme/Resources/BopimoTheme.tres\", sAutoload.gumm.load_resource(\"mod://Themes/JollyTheme.tres\"))
+	$/root/Themer.change_theme(\"mod://Themes/JollyTheme.tres\")
 	save_to_file(\"JollyTheme.tres\")
 
 func save_to_file(content : String):
@@ -183,8 +189,11 @@ func save_to_file(content : String):
 resource_name = "ThemeButton3"
 script/source = "extends Button
 
+signal change_theme
+
 func _on_pressed() -> void:
 	#sAutoload.gumm.replace_resource_at(\"res://addons/BopimoTheme/Resources/BopimoTheme.tres\", sAutoload.gumm.load_resource(\"mod://Themes/ButabsToolkitTheme.tres\"))
+	$/root/Themer.change_theme(\"mod://Themes/ButabsToolkitTheme.tres\")
 	save_to_file(\"ButabsToolkitTheme.tres\")
 
 func save_to_file(content : String):
