@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cca402epb73k7"]
 
-[ext_resource type="Texture2D" uid="uid://blvkt2uubcqf5" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="1_7m7we"]
-[ext_resource type="Script" uid="uid://cr1qhvqr88hpy" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/OtherCornerButton.gd" id="2_fwmbj"]
-[ext_resource type="Theme" uid="uid://beuomq0jraf8m" path="res://addons/BopimoTheme/Resources/BopimoTheme.tres" id="3_fwmbj"]
+[ext_resource type="Texture2D" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="1_7m7we"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Buttons/OtherCornerButton/OtherCornerButton.gd" id="2_fwmbj"]
+[ext_resource type="Theme" path="res://addons/BopimoTheme/Resources/BopimoTheme.tres" id="3_fwmbj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2shcu"]
 atlas = ExtResource("1_7m7we")

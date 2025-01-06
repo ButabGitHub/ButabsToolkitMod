@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bybdsdqip3ym"]
+[gd_scene load_steps=11 format=3  uid="uid://bybdsdqip3ym"]
 
-[ext_resource type="Script" uid="uid://dlr0gijb8vue7" path="res://Client/Scripts/GUI/Text/TextBubble.gd" id="2_4carx"]
-[ext_resource type="Texture2D" uid="uid://b1nx58egvpt4e" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Chat.png" id="2_ete60"]
-[ext_resource type="FontFile" uid="uid://cfgp11vctfx88" path="res://addons/BopimoTheme/Resources/Fonts/Quicksand.ttf" id="2_ylnkm"]
-[ext_resource type="FontVariation" uid="uid://7y0heevchlo1" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Bold.tres" id="4_u7twh"]
-[ext_resource type="FontVariation" uid="uid://bqmsjchh08j4e" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Italics.tres" id="5_10a15"]
-[ext_resource type="FontVariation" uid="uid://c60mjf2s87ncc" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/BoldItalics.tres" id="6_avo1l"]
-[ext_resource type="Shader" uid="uid://c2gvujqcx86gy" path="res://Client/Scenes/GUI/Text/TextBubbleInstance.gdshader" id="7_awa71"]
+[ext_resource type="Script" path="res://Client/Scripts/GUI/Text/TextBubble.gd" id="2_4carx"]
+[ext_resource type="Texture2D" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Chat.png" id="2_ete60"]
+[ext_resource type="FontFile" path="res://addons/BopimoTheme/Resources/Fonts/Quicksand.ttf" id="2_ylnkm"]
+[ext_resource type="FontVariation" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Bold.tres" id="4_u7twh"]
+[ext_resource type="FontVariation" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Italics.tres" id="5_10a15"]
+[ext_resource type="FontVariation" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/BoldItalics.tres" id="6_avo1l"]
+[ext_resource type="Shader" path="res://Client/Scenes/GUI/Text/TextBubbleInstance.gdshader" id="7_awa71"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c2b68"]
 shader = ExtResource("7_awa71")
