@@ -25,6 +25,7 @@ func load_from_file():
 	return str(content)
 
 
+# Written by Winonamac!
 #This class is watching for new nodes
 class Themer extends Node:
 	var gumm
@@ -37,5 +38,5 @@ class Themer extends Node:
 	
 	func on_new_node(node):
 		if "theme" in node:
-			if node.theme == default_theme: #Only replace if node has the default theme.
+			if node.theme == default_theme: # Only replace if node has the default theme.
 				node.theme = theme

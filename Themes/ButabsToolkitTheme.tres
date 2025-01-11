@@ -1,11 +1,11 @@
 [gd_resource type="Theme" load_steps=81 format=3 uid="uid://ddk3xqb8dl7ry"]
 
-[ext_resource type="FontFile" path="res://addons/BopimoTheme/Resources/Fonts/Quicksand.ttf" id="1_x3cpu"]
-[ext_resource type="Texture2D" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="2_e62y3"]
-[ext_resource type="Texture2D" path="res://Client/Assets/Textures/GUI/Buttons/tick.png" id="3_j1htl"]
-[ext_resource type="FontVariation" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Bold.tres" id="4_s62yj"]
-[ext_resource type="FontVariation" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/BoldItalics.tres" id="5_keyv2"]
-[ext_resource type="FontVariation" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Italics.tres" id="6_p2wct"]
+[ext_resource type="FontFile" uid="uid://cfgp11vctfx88" path="res://addons/BopimoTheme/Resources/Fonts/Quicksand.ttf" id="1_x3cpu"]
+[ext_resource type="Texture2D" uid="uid://blvkt2uubcqf5" path="res://Bopimo/Client/Resources/Imported/Texture/Texture2D/CompressedTexture2D/GUI/Icons.png" id="2_e62y3"]
+[ext_resource type="Texture2D" uid="uid://bxindyr8pvq4d" path="res://Client/Assets/Textures/GUI/Buttons/tick.png" id="3_j1htl"]
+[ext_resource type="FontVariation" uid="uid://7y0heevchlo1" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Bold.tres" id="4_s62yj"]
+[ext_resource type="FontVariation" uid="uid://c60mjf2s87ncc" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/BoldItalics.tres" id="5_keyv2"]
+[ext_resource type="FontVariation" uid="uid://bqmsjchh08j4e" path="res://addons/BopimoTheme/Resources/Fonts/FontVariation/Italics.tres" id="6_p2wct"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqbfu"]
 content_margin_left = 2.0
