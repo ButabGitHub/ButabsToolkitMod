@@ -2,4 +2,4 @@
  Butab's Toolkit mod for Bopimo!
 
 # Contributors:
-Huge thanks to [@Winonamac](https://github.com/Winonamac) for fixing themes load!
+Huge thanks to [@Winonamac](https://github.com/Winonamac) for fixing themes loading!
